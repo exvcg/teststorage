@@ -38,10 +38,11 @@ def root(start,count,first):#현재위치 총도시수 출발점
     global short
     check[start] = True # 방문
     if(False not in check): #전부다 방문 했으면
-        short += city[start][first]#마지막에서 처음 시작하는 도시로 이동
-        if(dis>short):
-            dis = short
-        short -= city[start][first]#그 전으로
+        if city[start][first] > 0: #경로가 있다면
+            short += city[start][first]#마지막에서 처음 시작하는 도시로 이동
+            if(dis>short):
+                dis = short
+            short -= city[start][first]#그 전으로
     for i in range(count):
         if(check[i] == True or city[start][i] == 0):# 들렸거나 길이 없다면 스킵
             continue

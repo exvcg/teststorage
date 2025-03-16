@@ -39,15 +39,12 @@ def Zsearch(a,b,c):#제곱수,가로,세로
     for ck in reversed(range(a)):
         if(check[ck] == (True,True)):
             p = 3*((2**(ck))**2)
-            print(p)
             x += p
         elif(check[ck] == (False,True)):
             p = 2*((2**(ck))**2)
-            print(p)
             x += p
         elif(check[ck] == (True,False)):
             p = ((2**(ck))**2)
-            print(p)
             x += p
 g = list(map(int,input().split(" ")))
 Zsearch(g[0],g[2],g[1])
